@@ -1,0 +1,34 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'c:/Users/alex/Documents/GitHub/test-technique'
+C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe start
+ 
+make[1]: Entering directory 'c:/Users/alex/Documents/GitHub/test-technique'
+docker-compose up -d
+make[1]: Leaving directory 'c:/Users/alex/Documents/GitHub/test-technique'
+ 
+docker-compose run --rm node npm install
+C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe migrate
+ 
+make[1]: Entering directory 'c:/Users/alex/Documents/GitHub/test-technique'
+docker-compose run --rm node npx sequelize-cli db:migrate
+make[1]: Leaving directory 'c:/Users/alex/Documents/GitHub/test-technique'
+ 
+C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe restart
+ 
+make[1]: Entering directory 'c:/Users/alex/Documents/GitHub/test-technique'
+C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe stop && C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe start
+ 
+make[2]: Entering directory 'c:/Users/alex/Documents/GitHub/test-technique'
+ 
+docker-compose down
+ 
+make[2]: Leaving directory 'c:/Users/alex/Documents/GitHub/test-technique'
+ 
+make[2]: Entering directory 'c:/Users/alex/Documents/GitHub/test-technique'
+docker-compose up -d
+make[2]: Leaving directory 'c:/Users/alex/Documents/GitHub/test-technique'
+ 
+make[1]: Leaving directory 'c:/Users/alex/Documents/GitHub/test-technique'
+ 
+make: Leaving directory 'c:/Users/alex/Documents/GitHub/test-technique'
+ 
